@@ -1,0 +1,42 @@
+.col-md-4 {
+    background-color: #0F75F6;
+    color: aliceblue;
+    height: 500px;
+}
+.city_name_container{
+    height: 500px;
+    background-image: url('./photo-1454447170982-596ddff4606a.jpeg');
+    background-size: cover;
+}
+.icon-img {
+    background-color: red;
+}
+.second_row {
+    color: #0F75F6;
+}
+.city_name_container{
+    color: #0F75F6;
+}
+.col-md-2 {
+    margin-left: 29px;
+}
+#adjust{
+    margin-left:53px;
+}
+.temperature {
+    margin-left: 19%;
+    margin-top: 60px;
+    color: white;
+    font-size: 67px;
+    display: flex;
+   
+}
+p {
+    display: inline-block;
+} 
+.icon{
+    margin-top:35%;
+}
+.week_day{
+    font-size: 45px;
+}
