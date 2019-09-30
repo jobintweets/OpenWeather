@@ -26,18 +26,10 @@ return  avg_max_temp = Math.max.apply(Math, data.map(function(e) { return e.main
 //    },0);
 return  avg_max_temp = Math.min.apply(Math, data.map(function(e) { return e.main.temp_min; }));
 }
- function getLocation() {
+
   
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-      alert("Service Not Supported");
-    }
-  }
-  
-  function showPosition(position) {
-    let lati=position.coords.latitude;
-    let longi=position.coords.longitude;
+  function getCity(lati,longi) {
+
     const iconElement=document.querySelector(".icon");
     // console.log(lati) ;
     // console.log(longi);
@@ -75,7 +67,7 @@ return  avg_max_temp = Math.min.apply(Math, data.map(function(e) { return e.main
                     
                     let test=result.list.map(curr=> curr);
  console.log(test);
-    let  filtered_days = test.filter(item => {
+    var  filtered_days = test.filter(item => {
      let test=new Date(item.dt_txt);
      let date1 = test.getFullYear()+'-'+(test.getMonth()+1)+'-'+test.getDate();
      return date1!=just_date;
@@ -83,16 +75,17 @@ return  avg_max_temp = Math.min.apply(Math, data.map(function(e) { return e.main
         });
         console.log("4 days",filtered_days);
         let test_date1=new Date(filtered_days[0].dt_txt);
-        let greet=test_date1.toLocaleTimeString('it-IT');
+        let t_d=new Date(result.list[0].dt_txt)
+        let greet=t_d.toLocaleTimeString('it-IT');
 //       let dd=new Date(filtered_days[29].dt_txt);
 console.log(greet);
 let tym= greet.substring(0,2);
 
-console.log(tym);
+let t1=tym+12;
 
-if(tym<12){
+if(t1<12){
  document.getElementById("greet_user").innerHTML="Good Morning";
- document.getElementById("city_name_container").style.backgroundImage= "url('cloud.gif')";
+ document.getElementById("city_name_container").style.backgroundImage= "url('test_image.gif')";
  document.getElementById("city_name_container").style.backgroundSize='cover';
 //  document.body.style.backgroundImage = "url('test_image.jpg')";
 }
@@ -119,8 +112,7 @@ else  {
         var d4=current_day(test_date4);
         document.getElementById("day4").innerHTML = d4;
         let just_date4=test_date4.getFullYear()+'-'+(test_date4.getMonth()+1)+'-'+test_date4.getDate();
-        let test_date5=new Date(filtered_days[filtered_days.length-1].dt_txt);
-        
+        let test_date5=new Date(test[32].dt_txt);
         var d5=current_day(test_date5);
         // document.getElementById("day5").innerHTML = d5;
         let just_date5=test_date5.getFullYear()+'-'+(test_date5.getMonth()+1)+'-'+test_date5.getDate();
