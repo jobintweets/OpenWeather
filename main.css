@@ -11,7 +11,7 @@
 .icon-img {
     background-color: red;
 }
-.second_row {
+#second_row {
     color: #0F75F6;
 }
 .city_name_container{
@@ -40,3 +40,16 @@ p {
 .week_day{
     font-size: 45px;
 }
+
+.city_name_container{
+    text-align: left;
+   
+    font-size:3.5rem;
+}
+.greet_user {
+    font-size:3.5rem;   
+}
+.second_row {
+    margin-top:22px;
+}
+ 

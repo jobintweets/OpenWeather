@@ -46,7 +46,9 @@ return   acc+temp.main.temp_min/8;
             Http.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     let result =JSON.parse(Http.responseText);
+                    console.log(result);
                     weatherIcon=result.weather[0].icon;
+                //    let  api_time=result.
                     console.log(weatherIcon);
                     iconElement.innerHTML=`<img src='icons/${weatherIcon}.png'/>`;
                     document.getElementById("highest_temp").innerHTML=(result.main.temp_max-273.15).toPrecision(2);
@@ -79,6 +81,26 @@ return   acc+temp.main.temp_min/8;
         });
         console.log("4 days",filtered_days);
         let test_date1=new Date(filtered_days[0].dt_txt);
+        let greet=test_date1.toLocaleTimeString('it-IT');
+//       let dd=new Date(filtered_days[29].dt_txt);
+console.log(greet);
+let tym= greet.substring(0,2);
+
+console.log(tym);
+
+if(tym<12){
+ document.getElementById("greet_user").innerHTML="Good Morning";
+ document.getElementById("city_name_container").style.backgroundImage= "url('test_image.gif')";
+ document.getElementById("city_name_container").style.backgroundSize='cover';
+//  document.body.style.backgroundImage = "url('test_image.jpg')";
+}
+ else if (tym>=12 || tym<=17) {
+    document.getElementById("greet_user").innerHTML="Good Afternoon"; 
+}
+else  {
+    document.getElementById("greet_user").innerHTML="Good Evening"; 
+}
+
         var d1=current_day(test_date1);
         document.getElementById("day1").innerHTML = d1;
         let just_date1=test_date1.getFullYear()+'-'+(test_date1.getMonth()+1)+'-'+test_date1.getDate();
@@ -138,9 +160,7 @@ let day3= filtered_days.filter(item=>{
             
                 
  };
-   
-            
-  }
+   }
   function display(day2,day3,day4,day5,day6) {
     let icon2=day2[0].weather[0].icon;
     document.querySelector(".icon1").innerHTML=`<img src='icons/${icon2}.png'/>`;
@@ -158,19 +178,19 @@ let day3= filtered_days.filter(item=>{
    const min1=avg_temp_min(day2);
    const a_m_t1=min1-273;
    
-  document.getElementById("min_temp_2").innerHTML= a_m_t1.toPrecision(2);
+  document.getElementById("min_temp_2").innerHTML= a_m_t1.toPrecision(3);
     const max2=avg_temp_max(day3);
     const b2=max2-273;
     document.getElementById("max_temp_3").innerHTML=b2.toPrecision(2);
     const min2=avg_temp_min(day3);
     const a_m_t2=min2-273;
-   document.getElementById("min_temp_3").innerHTML= a_m_t2.toPrecision(2);
+   document.getElementById("min_temp_3").innerHTML= a_m_t2.toPrecision(3);
     const max3=avg_temp_max(day4);
     const b3=max3-273;
     document.getElementById("max_temp_4").innerHTML=b3.toPrecision(2);
     const min3=avg_temp_min(day4);
     const a_m_t3=min3-273;
-   document.getElementById("min_temp_4").innerHTML= a_m_t3.toPrecision(2);
+   document.getElementById("min_temp_4").innerHTML= a_m_t3.toPrecision(3);
     const max4=avg_temp_max(day5);
     const b4=max4-273;
     document.getElementById("max_temp_5").innerHTML=b4.toPrecision(2);
@@ -181,4 +201,3 @@ let day3= filtered_days.filter(item=>{
 //    document.getElementById("max_temp_6").innerHTML=b2.toPrecision(2);
   }
   
-
