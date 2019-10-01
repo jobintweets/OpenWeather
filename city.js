@@ -10,7 +10,7 @@ weekday[5] = "Friday";
 weekday[6] = "Saturday";
 let current_day1 = weekday[current_date.getDay()];
 return current_day1;
-//
+
 }
 
 function avg_temp_max(data) {
@@ -31,10 +31,9 @@ return  avg_max_temp = Math.min.apply(Math, data.map(function(e) { return e.main
   function getCity(lati,longi) {
 
     const iconElement=document.querySelector(".icon");
-    // console.log(lati) ;
-    // console.log(longi);
+   
    const Http = new XMLHttpRequest();
- const url='https:/api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
+ const url='https://api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
              Http.open("GET", url,true);
             Http.send();
             Http.onreadystatechange = function() {
@@ -51,7 +50,7 @@ return  avg_max_temp = Math.min.apply(Math, data.map(function(e) { return e.main
                 }
             };
             const weeks_api = new XMLHttpRequest();
-            const forecast_url='https:/api.openweathermap.org/data/2.5/forecast?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
+            const forecast_url='https://api.openweathermap.org/data/2.5/forecast?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
             weeks_api.open("GET", forecast_url,true);
             weeks_api.send();
             weeks_api.onreadystatechange = function() {

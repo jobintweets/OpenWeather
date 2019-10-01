@@ -73,7 +73,7 @@ return   acc+temp.main.temp_min/8;
         let greet=test_date1.toLocaleTimeString('it-IT');
         let tym= greet.substring(0,2);
 if(tym<12){
- document.getElementById("greet_user").innerHTML="Good Afternoon";
+ document.getElementById("greet_user").innerHTML="Good Morning";
  document.getElementById("city_name_container").style.backgroundImage= "url('cloud.gif')";
  document.getElementById("city_name_container").style.backgroundSize='cover';
 }
