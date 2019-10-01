@@ -33,7 +33,7 @@ return  avg_max_temp = Math.min.apply(Math, data.map(function(e) { return e.main
     const iconElement=document.querySelector(".icon");
    
    const Http = new XMLHttpRequest();
- const url='https://api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
+ const url='https://api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+longi+'&APPID=080af8d486d22f981dcd80047bb9e359';
              Http.open("GET", url,true);
             Http.send();
             Http.onreadystatechange = function() {
@@ -50,7 +50,7 @@ return  avg_max_temp = Math.min.apply(Math, data.map(function(e) { return e.main
                 }
             };
             const weeks_api = new XMLHttpRequest();
-            const forecast_url='https://api.openweathermap.org/data/2.5/forecast?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
+            const forecast_url='https://api.openweathermap.org/data/2.5/forecast?lat='+lati+'&lon='+longi+'&APPID=080af8d486d22f981dcd80047bb9e359';
             weeks_api.open("GET", forecast_url,true);
             weeks_api.send();
             weeks_api.onreadystatechange = function() {
